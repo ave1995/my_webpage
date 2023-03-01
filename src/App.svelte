@@ -1,46 +1,86 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
+  import Home from "./menu/Home.svelte";
+  import Profile from "./menu/Profile.svelte";
+
+  export let menu = 1;
 </script>
 
 <main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer"> 
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer"> 
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
+  <div id="header">
+    <span id="myname">Aleš Veselý</span>
+    <ul id="menu">
+      <li>
+        <a href="/" on:click|preventDefault={() => (menu = 1)}>Home</a>
+      </li>
+      <li>
+        <a href="/" on:click|preventDefault={() => (menu = 2)}>Profile</a>
+      </li>
+    </ul>
   </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
+  <div id="body">
+    {#if menu === 1}
+      <Home />
+    {:else if menu === 2}
+      <Profile />
+    {:else}
+      <h1>Page Not Found</h1>
+    {/if}
   </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
 </main>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  #myname {
+    display: inline;
+    margin: 1rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    letter-spacing: 0.25rem;
+    line-height: inherit;
+    height: inherit;
+    text-transform: uppercase;
+    font-weight: 800;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+  #header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    position: relative;
+    background-color: #202124;
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
+  ul#menu {
+    margin: 0;
+    padding: 1rem;
+    padding-left: 2rem;
+    border-color: white;
+    border-left-style: solid;
+    border-left-width: thin;
   }
-  .read-the-docs {
-    color: #888;
+  ul#menu li:not(:first-child) {
+    border-color: white;
+    border-left-style: solid;
+    border-left-width: thin;
+    padding-left: 1rem;
+    margin-left: 1rem;
+  }
+  ul#menu li {
+    display: inline;
+  }
+
+  ul#menu li a {
+    color: white;
+    text-decoration: none;
+  }
+  #body {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: white;
+    border-style: solid;
+    width: 50%;
+
   }
 </style>
