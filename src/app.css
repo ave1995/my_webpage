@@ -1,13 +1,14 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Segoe UI,system-ui,-apple-system,sans-serif;;
   line-height: 1.5;
   font-weight: 400;
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
 
   color-scheme: light dark;
   color: #F8F9FA;
   background-color: #202124;
 }
-body {
+html, body{
   margin: 0;
 }
 

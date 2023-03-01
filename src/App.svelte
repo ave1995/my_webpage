@@ -7,7 +7,7 @@
 
 <main>
   <div id="header">
-    <span id="myname">Aleš Veselý</span>
+    <span id="myname">A\Ve</span>
     <ul id="menu">
       <li>
         <a href="/" on:click|preventDefault={() => (menu = 1)}>Home</a>
@@ -29,6 +29,9 @@
 </main>
 
 <style>
+   main {
+    height: 100vh;
+  }
   #myname {
     display: inline;
     margin: 1rem;
@@ -37,29 +40,28 @@
     letter-spacing: 0.25rem;
     line-height: inherit;
     height: inherit;
-    text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 600;
   }
   #header {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    border-color: white;
+    border-color:  #585b63;
     border-bottom-style: solid;
     border-bottom-width: thin;
     position: relative;
-    background-color: #202124;
+    background-color: #303136;
   }
   ul#menu {
     margin: 0;
     padding: 1rem;
     padding-left: 2rem;
-    border-color: white;
+    border-color:  #585b63;
     border-left-style: solid;
     border-left-width: thin;
   }
   ul#menu li:not(:first-child) {
-    border-color: white;
+    border-color:  #585b63;
     border-left-style: solid;
     border-left-width: thin;
     padding-left: 1rem;
@@ -74,13 +76,17 @@
     text-decoration: none;
   }
   #body {
-    margin: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-color: white;
-    border-style: solid;
+    border: 1px solid #585b63;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 2rem;
     width: 50%;
-
+    height: 50%;
+    padding: 2rem;
+    background-color: #303136;
   }
+ 
 </style>
