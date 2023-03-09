@@ -4,6 +4,7 @@
 </script>
 
 <div class="header">
+    <p>A\Ve</p>
     <nav class="navbar">
         <div>
             <div class="links">
@@ -12,14 +13,18 @@
             </div>
         </div>
     </nav>
+    <div></div>
 </div>
 
 <style>
     .header {
-        grid-column: 1/4;
+        grid-area: head;
         display: flex;
         align-items: center;
-        justify-content: center;
         background-color: #303136;
+        justify-content: space-between;
+    }
+    .navbar {
+        text-align: center;
     }
 </style>
