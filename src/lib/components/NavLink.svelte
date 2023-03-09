@@ -35,6 +35,8 @@
     }
     button:hover {
         cursor: pointer;
+        color: #f8f9fa;
+        transition: color 1s ease-out;
     }
     button:not(.active) span:hover:after {
         transform: scaleX(1);
